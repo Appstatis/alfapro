@@ -3,11 +3,7 @@ import React from "react";
 
 import { Navbar } from "./Navbar";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
 
   return (
