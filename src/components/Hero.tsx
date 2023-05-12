@@ -1,14 +1,17 @@
 import Link from "next/link";
 import React from "react";
 
-type Props = {
+export const Hero = ({
+  title,
+  body,
+  linkText,
+  href,
+}: {
   title: string;
   body: string;
   linkText: string;
   href: string;
-};
-
-export const Hero = ({ title, body, linkText, href }: Props) => {
+}) => {
   return (
     <div className="min-h-screen hero">
       <div className="text-center hero-content">

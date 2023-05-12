@@ -1,11 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-type Props = {
-  title: string;
-};
-
-export const Navbar = ({ title }: Props) => {
+export const Navbar = ({ title }: { title: string }) => {
   const links = [
     {
       name: "Autokool",
