@@ -67,7 +67,7 @@ export const Navbar = ({ title }: { title: string }) => {
           </ul>
         </div>
         <Link
-          href="/"
+          href="/home"
           className="text-xl normal-case btn text-primary btn-ghost"
         >
           {title}
