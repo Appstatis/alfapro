@@ -51,7 +51,7 @@ const Home = () => {
         <Image
           src={AlfaProImage}
           alt="AlfaPro index image"
-          className="h-auto max-w-full rounded-xl"
+          className="w-full h-auto max-w-xl rounded-xl"
         />
       </section>
       <section className="grid gap-3">
