@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import AlfaProImage from "@/assets/alfapro.jpg";
+import { StyledLink } from "@/components/StyledLink";
 
 const Home = () => {
   const features = [
@@ -100,6 +102,9 @@ const Home = () => {
           õppetöö käigus.
         </p>
       </section>
+      <StyledLink href="/Autokooli_tegevuse_kvaliteedi_tagamise_alused.docx">
+        Autokooli_tegevuse_kvaliteedi_tagamise_alused.docx
+      </StyledLink>
     </>
   );
 };
