@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import AlfaProImage from "@/assets/alfapro.jpg";
 import { StyledLink } from "@/components/StyledLink";
 
 const Autokool = () => {
