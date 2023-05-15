@@ -1,4 +1,3 @@
-import { Hero } from "@/components/Hero";
 import { KavaTable } from "@/components/pages/kava/KavaTable";
 import kava from "@/data/kava.json";
 

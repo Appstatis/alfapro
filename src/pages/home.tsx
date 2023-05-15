@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import AlfaProImage from "@/assets/alfapro.jpg";
 import { StyledLink } from "@/components/StyledLink";
@@ -58,7 +57,7 @@ const Home = () => {
       </section>
       <section className="grid gap-3">
         <h2 className="text-2xl">
-          AUTOKOOLI TEGEVUSE KVALITEEDI TAGAMISE ALUSED
+          Autokooli tegevuse kvaliteedi tagamise alused
         </h2>
         <p>
           Autokool Alfa Pro tegutseb Haridus- ja Teadusministeeriumi poolt
