@@ -3,8 +3,8 @@ import { StyledLink } from "@/components/StyledLink";
 const Autokool = () => {
   return (
     <>
+      <h1 className="text-3xl">Autokool</h1>
       <section className="grid gap-2">
-        <h1 className="text-3xl">Autokool</h1>
         <p>
           ALFA PRO OÜ-le on Haridus- ja Teadusministeeriumi poolt väljastatud
           tegevusluba mootorsõidukijuhtide koolitamiseks B-kategoorias. Alus:
