@@ -43,9 +43,9 @@ const Home = () => {
             teadmiste poole.
           </p>
           <p>Meil on kõik, mis teile sobib:</p>
-          <ol>
+          <ol className="list-disc">
             {features.map((feature) => (
-              <li key={feature.body}>- {feature.body}</li>
+              <li key={feature.body}>{feature.body}</li>
             ))}
           </ol>
         </div>
