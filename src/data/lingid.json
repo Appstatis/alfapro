@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Eesti Liikluskindlustuse Fond",
+    "url": "http://www.lkf.ee/index.php?lang=et"
+  },
+  {
+    "id": 2,
+    "name": "RIK",
+    "url": "https://www.rik.ee/"
+  },
+  {
+    "id": 3,
+    "name": "Teooria",
+    "url": "https://www.teooria.ee/"
+  },
+  {
+    "id": 4,
+    "name": "liikluslab",
+    "url": "https://liikluslab.ee/"
+  },
+  {
+    "id": 5,
+    "name": "Transpordiamet",
+    "url": "https://www.transpordiamet.ee/"
+  }
+]
