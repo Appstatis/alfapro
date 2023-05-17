@@ -3,9 +3,12 @@ import kava from "@/data/kava.json";
 
 const Kava = () => {
   return (
-    <div className="overflow-x-auto">
-      <KavaTable kava={kava} />
-    </div>
+    <>
+      <h1 className="text-3xl">Õppekava</h1>
+      <div className="overflow-x-auto">
+        <KavaTable kava={kava} />
+      </div>
+    </>
   );
 };
 
