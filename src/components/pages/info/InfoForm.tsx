@@ -9,6 +9,7 @@ export const InfoForm = () => {
             </label>
             <input
               type="text"
+              name="name"
               placeholder="Toivo"
               className="w-full input input-bordered"
             />
@@ -19,6 +20,7 @@ export const InfoForm = () => {
             </label>
             <input
               type="text"
+              name="email"
               placeholder="mymail@mail.com"
               className="w-full input input-bordered"
             />
@@ -28,11 +30,15 @@ export const InfoForm = () => {
               <span className="label-text">Lisa infot</span>
             </label>
             <textarea
+              maxLength={150}
               placeholder="Info"
+              name="info"
               className="w-full textarea textarea-bordered textarea-md"
             ></textarea>
           </div>
-          <input type="button" className="btn btn-primary" value="Saada" />
+          <button type="submit" className="btn btn-primary">
+            Saada
+          </button>
         </div>
       </form>
     </>
