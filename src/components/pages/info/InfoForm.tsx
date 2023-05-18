@@ -1,7 +1,7 @@
 export const InfoForm = () => {
   return (
     <>
-      <form action="">
+      <form>
         <div className="flex flex-col gap-3">
           <div className="w-full form-control">
             <label className="label">
@@ -19,7 +19,7 @@ export const InfoForm = () => {
               <span className="label-text">Email</span>
             </label>
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="mymail@mail.com"
               className="w-full input input-bordered"
