@@ -22,7 +22,6 @@ export const InfoForm = () => {
         info,
       }),
     });
-    alert("Form submitted");
   };
 
   return (
