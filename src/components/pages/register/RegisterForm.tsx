@@ -73,7 +73,9 @@ export const RegisterForm = () => {
             className="w-full textarea textarea-bordered textarea-md"
           ></textarea>
         </div>
-        <input type="button" className="btn btn-primary" value="Saada" />
+        <button type="submit" className="btn btn-primary">
+          Saada
+        </button>
       </div>
     </form>
   );
