@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const RegisterForm = () => {
   const [firstName, setFirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [isikukood, setIsikukood] = useState("");
   const [phone, setPhone] = useState("");
@@ -19,6 +19,8 @@ export const RegisterForm = () => {
           </label>
           <input
             required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             name="firstName"
             type="text"
             placeholder="Toivo"
@@ -31,6 +33,8 @@ export const RegisterForm = () => {
           </label>
           <input
             required
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             name="lastName"
             type="text"
             placeholder="Sarapuu"
@@ -43,6 +47,8 @@ export const RegisterForm = () => {
           </label>
           <input
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             name="email"
             type="text"
             placeholder="mymail@mail.com"
@@ -55,6 +61,8 @@ export const RegisterForm = () => {
           </label>
           <input
             required
+            value={isikukood}
+            onChange={(e) => setIsikukood(e.target.value)}
             name="isikukood"
             type="text"
             placeholder="37506060123"
@@ -67,6 +75,8 @@ export const RegisterForm = () => {
           </label>
           <input
             required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             name="phone"
             type="text"
             placeholder="+372 55223366"
@@ -78,7 +88,8 @@ export const RegisterForm = () => {
             <span className="label-text">Lisa infot</span>
           </label>
           <textarea
-            required
+            value={info}
+            onChange={(e) => setInfo(e.target.value)}
             name="info"
             placeholder="Info"
             className="w-full textarea textarea-bordered textarea-md"
