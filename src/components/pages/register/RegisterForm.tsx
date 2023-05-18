@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-import { PhoneNumberValidator } from "@/utils/PhoneNumberValidator";
 import { validateEmail } from "@/utils/validateEmail";
+import { validateIsikukood } from "@/utils/validateIsikukood";
+import { PhoneNumberValidator } from "@/utils/PhoneNumberValidator";
 
 const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
 
@@ -14,6 +15,7 @@ export const RegisterForm = () => {
   const [info, setInfo] = useState("");
 
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidIsikukood, setIsvalidIsikukood] = useState(true);
   const [isValidPhone, setIsValidPhone] = useState(true);
 
   // todo: add normal type to `e`
@@ -22,6 +24,12 @@ export const RegisterForm = () => {
 
     if (!validateEmail(email)) {
       setIsValidEmail(false);
+
+      return;
+    }
+
+    if (validateIsikukood(isikukood)) {
+      setIsvalidIsikukood(false);
 
       return;
     }
@@ -119,6 +127,9 @@ export const RegisterForm = () => {
             placeholder="37506060123"
             className="w-full input input-bordered"
           />
+          {!isValidIsikukood && (
+            <p className="text-red-500">Palun, sisestage kehtiv isikukood</p>
+          )}
         </div>
         <div className="w-full form-control">
           <label className="label">
