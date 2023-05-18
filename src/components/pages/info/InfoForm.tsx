@@ -1,3 +1,4 @@
+import { validateEmail } from "@/utils/validateEmail";
 import { useState } from "react";
 
 const FORMSPARK_ACTION_URL = "https://submit-form.com/iosx6gf2";
@@ -7,9 +8,18 @@ export const InfoForm = () => {
   const [email, setEmail] = useState("");
   const [info, setInfo] = useState("");
 
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
   // todo: add normal type to `e`
   const onSubmit = async (e: any) => {
     e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setIsValidEmail(false);
+
+      return;
+    }
+
     await fetch(FORMSPARK_ACTION_URL, {
       method: "POST",
       headers: {
@@ -22,6 +32,10 @@ export const InfoForm = () => {
         info,
       }),
     });
+
+    setName("");
+    setEmail("");
+    setInfo("");
   };
 
   return (
@@ -33,6 +47,7 @@ export const InfoForm = () => {
               <span className="label-text">Nimi</span>
             </label>
             <input
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="text"
@@ -53,6 +68,11 @@ export const InfoForm = () => {
               placeholder="mymail@mail.com"
               className="w-full input input-bordered"
             />
+            {!isValidEmail && (
+              <p className="text-red-500">
+                Palun, sisestage kehtiv e-posti aadress
+              </p>
+            )}
           </div>
           <div className="w-full form-control">
             <label className="label">
