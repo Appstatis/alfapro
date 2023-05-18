@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
+
 export const RegisterForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -10,8 +12,42 @@ export const RegisterForm = () => {
 
   const [isValidEmail, setIsValidEmail] = useState(true);
 
+  // todo: add normal type to `e`
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+
+    // if (!validateEmail(email)) {
+    //   setIsValidEmail(false);
+
+    //   return;
+    // }
+
+    await fetch(FORMSPARK_ACTION_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        isikukood,
+        phone,
+        info,
+      }),
+    });
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setIsikukood("");
+    setPhone("");
+    setInfo("");
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className="flex flex-col gap-3">
         <div className="w-full form-control">
           <label className="label">
