@@ -61,6 +61,7 @@ export const InfoForm = () => {
               <span className="label-text">Email</span>
             </label>
             <input
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
@@ -79,9 +80,11 @@ export const InfoForm = () => {
               <span className="label-text">Lisa infot</span>
             </label>
             <textarea
+              required
               value={info}
               onChange={(e) => setInfo(e.target.value)}
               maxLength={150}
+              minLength={50}
               placeholder="Info"
               name="info"
               className="w-full textarea textarea-bordered textarea-md"
