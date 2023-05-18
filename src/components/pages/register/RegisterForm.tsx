@@ -1,6 +1,17 @@
+import { useState } from "react";
+
 export const RegisterForm = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isikukood, setIsikukood] = useState("");
+  const [phone, setPhone] = useState("");
+  const [info, setInfo] = useState("");
+
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
   return (
-    <form action="">
+    <form>
       <div className="flex flex-col gap-3">
         <div className="w-full form-control">
           <label className="label">
