@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+import { PhoneNumberValidator } from "@/utils/PhoneNumberValidator";
+import { validateEmail } from "@/utils/validateEmail";
+
+const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
+
 export const RegisterForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -9,9 +14,50 @@ export const RegisterForm = () => {
   const [info, setInfo] = useState("");
 
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidPhone, setIsValidPhone] = useState(true);
+
+  // todo: add normal type to `e`
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setIsValidEmail(false);
+
+      return;
+    }
+
+    if (!PhoneNumberValidator.validate(phone)) {
+      setIsValidPhone(false);
+
+      return;
+    }
+
+    await fetch(FORMSPARK_ACTION_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        isikukood,
+        phone,
+        info,
+      }),
+    });
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setIsikukood("");
+    setPhone("");
+    setInfo("");
+  };
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className="flex flex-col gap-3">
         <div className="w-full form-control">
           <label className="label">
@@ -50,10 +96,15 @@ export const RegisterForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             name="email"
-            type="text"
+            type="email"
             placeholder="mymail@mail.com"
             className="w-full input input-bordered"
           />
+          {!isValidEmail && (
+            <p className="text-red-500">
+              Palun, sisestage kehtiv e-posti aadress
+            </p>
+          )}
         </div>
         <div className="w-full form-control">
           <label className="label">
@@ -82,6 +133,11 @@ export const RegisterForm = () => {
             placeholder="+372 55223366"
             className="w-full input input-bordered"
           />
+          {!isValidPhone && (
+            <p className="text-red-500">
+              Palun, sisestage kehtiv telefoni number
+            </p>
+          )}
         </div>
         <div className="w-full form-control">
           <label className="label">
