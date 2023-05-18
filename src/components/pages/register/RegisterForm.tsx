@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { PhoneNumberValidator } from "@/utils/PhoneNumberValidator";
 import { validateEmail } from "@/utils/validateEmail";
 
 const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
@@ -13,6 +14,7 @@ export const RegisterForm = () => {
   const [info, setInfo] = useState("");
 
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidPhone, setIsValidPhone] = useState(true);
 
   // todo: add normal type to `e`
   const onSubmit = async (e: any) => {
@@ -20,6 +22,12 @@ export const RegisterForm = () => {
 
     if (!validateEmail(email)) {
       setIsValidEmail(false);
+
+      return;
+    }
+
+    if (!PhoneNumberValidator.validate(phone)) {
+      setIsValidPhone(false);
 
       return;
     }
@@ -125,6 +133,11 @@ export const RegisterForm = () => {
             placeholder="+372 55223366"
             className="w-full input input-bordered"
           />
+          {!isValidPhone && (
+            <p className="text-red-500">
+              Palun, sisestage kehtiv telefoni number
+            </p>
+          )}
         </div>
         <div className="w-full form-control">
           <label className="label">
