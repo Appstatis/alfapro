@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { validateEmail } from "@/utils/validateEmail";
+
 const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
 
 export const RegisterForm = () => {
@@ -16,11 +18,11 @@ export const RegisterForm = () => {
   const onSubmit = async (e: any) => {
     e.preventDefault();
 
-    // if (!validateEmail(email)) {
-    //   setIsValidEmail(false);
+    if (!validateEmail(email)) {
+      setIsValidEmail(false);
 
-    //   return;
-    // }
+      return;
+    }
 
     await fetch(FORMSPARK_ACTION_URL, {
       method: "POST",
@@ -86,10 +88,15 @@ export const RegisterForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             name="email"
-            type="text"
+            type="email"
             placeholder="mymail@mail.com"
             className="w-full input input-bordered"
           />
+          {!isValidEmail && (
+            <p className="text-red-500">
+              Palun, sisestage kehtiv e-posti aadress
+            </p>
+          )}
         </div>
         <div className="w-full form-control">
           <label className="label">
