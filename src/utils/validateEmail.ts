@@ -1,6 +1,5 @@
 export const validateEmail = (email: string): boolean => {
-  const pattern =
-    /^(([^<>()[].,;:\s@“]+(.[^<>()[].,;:\s@”]+)*)|(“.+”))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+  const pattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
   return pattern.test(email);
 };
