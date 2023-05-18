@@ -1,13 +1,41 @@
+import { useState } from "react";
+
+const FORMSPARK_ACTION_URL = "https://submit-form.com/iosx6gf2";
+
 export const InfoForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [info, setInfo] = useState("");
+
+  // todo: add normal type to `e`
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+    await fetch(FORMSPARK_ACTION_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        info,
+      }),
+    });
+    alert("Form submitted");
+  };
+
   return (
     <>
-      <form action="">
+      <form onSubmit={onSubmit}>
         <div className="flex flex-col gap-3">
           <div className="w-full form-control">
             <label className="label">
               <span className="label-text">Nimi</span>
             </label>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               type="text"
               name="name"
               placeholder="Toivo"
@@ -19,7 +47,9 @@ export const InfoForm = () => {
               <span className="label-text">Email</span>
             </label>
             <input
-              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
               name="email"
               placeholder="mymail@mail.com"
               className="w-full input input-bordered"
@@ -30,6 +60,8 @@ export const InfoForm = () => {
               <span className="label-text">Lisa infot</span>
             </label>
             <textarea
+              value={info}
+              onChange={(e) => setInfo(e.target.value)}
               maxLength={150}
               placeholder="Info"
               name="info"
