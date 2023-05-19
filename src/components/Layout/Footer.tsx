@@ -8,7 +8,10 @@ export const Footer = ({ title }: { title: string }) => {
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
-          <Link href="https://www.facebook.com/AlfaproAutokool">
+          <Link
+            className="hover:opacity-70"
+            href="https://www.facebook.com/AlfaproAutokool"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
