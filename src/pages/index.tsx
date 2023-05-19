@@ -2,7 +2,7 @@ import { Hero } from "@/components/Hero";
 
 const Home = () => {
   return (
-    <main>
+    <>
       <Hero
         title="Tere tulemast Alfa Pro Autokooli!"
         body='
@@ -15,7 +15,7 @@ const Home = () => {
         linkText="Minna avalehele"
         href="/home"
       />
-    </main>
+    </>
   );
 };
 
