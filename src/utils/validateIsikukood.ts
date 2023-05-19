@@ -1,3 +1,5 @@
+// todo: fix this
+
 export function validateIsikukood(isikukood: string): boolean {
   if (!/^\d{11}$/.test(isikukood)) {
     return false;
