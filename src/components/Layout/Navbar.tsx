@@ -86,7 +86,7 @@ export const Navbar = ({ title }: { title: string }) => {
       </div>
       <div className="navbar-end">
         <Link href="/register" className="btn btn-primary">
-          Registreeri kursustele
+          Registreeri
         </Link>
       </div>
     </nav>
