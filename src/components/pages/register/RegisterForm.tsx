@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { validateEmail } from "@/utils/validateEmail";
 import { validateIsikukood } from "@/utils/validateIsikukood";
-import { PhoneNumberValidator } from "@/utils/PhoneNumberValidator";
+import { validatePhone } from "@/utils/validatePhone";
 
 const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
 
@@ -18,12 +18,23 @@ export const RegisterForm = () => {
   const [isValidIsikukood, setIsvalidIsikukood] = useState(true);
   const [isValidPhone, setIsValidPhone] = useState(true);
 
+  const clearForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setIsikukood("");
+    setPhone("");
+    setInfo("");
+  };
+
   // todo: add normal type to `e`
   const onSubmit = async (e: any) => {
     e.preventDefault();
 
     if (!validateEmail(email)) {
       setIsValidEmail(false);
+
+      console.log(`email: ${isValidEmail}`);
 
       return;
     }
@@ -34,7 +45,7 @@ export const RegisterForm = () => {
       return;
     }
 
-    if (!PhoneNumberValidator.validate(phone)) {
+    if (!validatePhone(phone)) {
       setIsValidPhone(false);
 
       return;
@@ -56,12 +67,7 @@ export const RegisterForm = () => {
       }),
     });
 
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setIsikukood("");
-    setPhone("");
-    setInfo("");
+    clearForm();
   };
 
   return (
@@ -141,7 +147,7 @@ export const RegisterForm = () => {
             onChange={(e) => setPhone(e.target.value)}
             name="phone"
             type="text"
-            placeholder="+372 55223366"
+            placeholder="55223366"
             className="w-full input input-bordered"
           />
           {!isValidPhone && (
