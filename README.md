@@ -4,7 +4,7 @@ NextJS app for the AlfaPro driving school.
 
 ### todo
 
-- [ ] fix the [validateIsikukood](https://github.com/Appstatis/alfapro/blob/main/src/utils/validateIsikukood.ts) function
+- [x] fix the [validateIsikukood](https://github.com/Appstatis/alfapro/blob/main/src/utils/validateIsikukood.ts) function
 - [ ] add internationalization
 
 ## Development
