@@ -32,7 +32,7 @@ const Home = () => {
     <>
       <section className="grid gap-5 md:grid-cols-2">
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl">Tere tulemast Alfa Pro Autokooli.</h2>
+          <h2 className="text-2xl">Alfa Pro Autokool</h2>
           <p>
             Meie moto on &quot;ME SÕIDAME SAMUDEL TEEDEL&quot;. See on meie
             positsioon, meie eluviis ja õppimine. Oma tegevuses keskendume
