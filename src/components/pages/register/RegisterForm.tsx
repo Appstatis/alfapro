@@ -162,6 +162,7 @@ export const RegisterForm = () => {
           </label>
           <textarea
             value={info}
+            minLength={50}
             onChange={(e) => setInfo(e.target.value)}
             name="info"
             placeholder="Info"
