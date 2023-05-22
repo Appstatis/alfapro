@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import { validateEmail } from "@/utils/validateEmail";
-import { validateIsikukood } from "@/utils/validateIsikukood";
 import { validatePhone } from "@/utils/validatePhone";
+import { validateIsikukood } from "../../../utils/validateIsikukood";
 
 const FORMSPARK_ACTION_URL = "https://submit-form.com/Hviu4ed5";
 
@@ -34,12 +34,10 @@ export const RegisterForm = () => {
     if (!validateEmail(email)) {
       setIsValidEmail(false);
 
-      console.log(`email: ${isValidEmail}`);
-
       return;
     }
 
-    if (validateIsikukood(isikukood)) {
+    if (!validateIsikukood(isikukood)) {
       setIsvalidIsikukood(false);
 
       return;
