@@ -9,8 +9,6 @@ const Home = () => {
         Meie moto on "ME SÕIDAME SAMUDEL TEEDEL". See on meie
         positsioon, meie eluviis ja õppimine. Oma tegevuses keskendume
         autojuhikoolituse kvaliteedile.
-        Meie kooli uksed alati avatud neile, kes tahavad õppida, püüdlevad
-        teadmiste poole.
         '
         linkText="Minna avalehele"
         href="/home"
