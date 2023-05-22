@@ -83,7 +83,6 @@ export const InfoForm = () => {
               required
               value={info}
               onChange={(e) => setInfo(e.target.value)}
-              maxLength={150}
               minLength={50}
               placeholder="Info"
               name="info"
