@@ -4,30 +4,6 @@ import AlfaProImage from "@/assets/alfapro.jpg";
 import { StyledLink } from "@/components/StyledLink";
 
 const Home = () => {
-  const features = [
-    {
-      body:
-        "Kaasaegsete autodega sõitmine, kõrge kvalifikatsiooniga instruktorid, erialane ettevalmistus, Individuaalne lähenemine õpilasele, ohutuse garantii teedel. - Internetikooli kasutamise võimalus.",
-    },
-    {
-      body: "Taskukohased hinnad, etapiviisiline makse.",
-    },
-    {
-      body:
-        "Mugav autokooli asukoht, ligipääsetavus igast linnaosast igasugusele transport.",
-    },
-    {
-      body:
-        "Treenimine teile sobival ajal (sh hommikuti, õhtuti ja nädalavahetustel).",
-    },
-    {
-      body: "Õppimise võimalus automaatkäigukastiga autol.",
-    },
-    {
-      body: "Talvine sõit.",
-    },
-  ];
-
   return (
     <>
       <section className="grid gap-5 md:grid-cols-2">
@@ -44,15 +20,29 @@ const Home = () => {
           </p>
           <p>Meil on kõik, mis teile sobib:</p>
           <ol className="list-disc">
-            {features.map((feature) => (
-              <li key={feature.body}>{feature.body}</li>
-            ))}
+            <li>
+              Kaasaegsete autodega sõitmine, kõrge kvalifikatsiooniga
+              instruktorid, erialane ettevalmistus, Individuaalne lähenemine
+              õpilasele, ohutuse garantii teedel. - Internetikooli kasutamise
+              võimalus.
+            </li>
+            <li>Taskukohased hinnad, etapiviisiline makse.</li>
+            <li>
+              Mugav autokooli asukoht, ligipääsetavus igast linnaosast
+              igasugusele transport.
+            </li>
+            <li>
+              Treenimine teile sobival ajal (sh hommikuti, õhtuti ja
+              nädalavahetustel).
+            </li>
+            <li>Õppimise võimalus automaatkäigukastiga autol.</li>
+            <li>Talvine sõit.</li>
           </ol>
         </div>
         <Image
           src={AlfaProImage}
           alt="AlfaPro index image"
-          className="w-full h-auto max-w-xl rounded-xl"
+          className="w-full max-w-xl h-auto rounded-xl"
         />
       </section>
       <section className="grid gap-3">
